@@ -1,10 +1,11 @@
 package com.prestige.ecommerce.entity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +27,8 @@ public class Utilisateur {
     private String prenom;
 
     @Column(name = "email")
+    @NotNull
+    @Email
     private String email;
 
     @Column(name = "mot_de_passe")

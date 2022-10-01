@@ -3,6 +3,7 @@ package com.prestige.ecommerce.config;
 import com.prestige.ecommerce.entity.Categorie;
 import com.prestige.ecommerce.entity.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -18,6 +19,8 @@ import java.util.Set;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
+    @Value("http://localhost:4200")
+    private String[] theAllowedOrigins;
     private EntityManager entityManager;
 
     @Autowired
