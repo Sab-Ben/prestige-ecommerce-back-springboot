@@ -21,19 +21,19 @@ public class AuthentificationServiceImpl implements AuthentificationService{
 
         Utilisateur utilisateur = authentification.getUtilisateur();
 
-        String connexionSuccessMessage = connexion();
-        utilisateur.getMotDePasse();
-
-
-        if (utilisateur.getEmail() == null) {
-
-        }
+        String email = utilisateur.getEmail();
+        String connexionSuccessMessage = userExisting(email);
 
         return new AuthentificationReponse(connexionSuccessMessage);
     }
 
-    private String connexion() {
-        return utilisateurRepository.findByEmail(toString()).getEmail();
+    private String userExisting(String email) {
+
+        Utilisateur utilisateur = utilisateurRepository.findByEmail(email);
+        if (utilisateur == null) {
+            throw new UtilisateurNotFoundException("L'utilisateur n'existe pas pour ce mail " + email);
+        }
+        return utilisateur.getEmail();
     }
 
 }

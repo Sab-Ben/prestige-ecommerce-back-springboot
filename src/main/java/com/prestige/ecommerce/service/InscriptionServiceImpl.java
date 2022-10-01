@@ -24,16 +24,11 @@ public class InscriptionServiceImpl implements InscriptionService{
     public InscriptionReponse confirmationInscription(Inscription inscription) {
 
             Utilisateur utilisateur = inscription.getUtilisateur();
-//            utilisateur.setNom(utilisateur.getNom());
-//            utilisateur.setPrenom(utilisateur.getPrenom());
-//            utilisateur.setEmail(utilisateur.getEmail());
-//            utilisateur.setMotDePasse(utilisateur.getMotDePasse());
-//            utilisateur.setTelephone(utilisateur.getTelephone());
 
             assert utilisateur != null;
-        Utilisateur utilsateurSauvegarder = utilisateurRepository.save(utilisateur);
+        Utilisateur utilisateurSauvegarder = utilisateurRepository.save(utilisateur);
 
-        return new InscriptionReponse(utilsateurSauvegarder.getPrenom());
+        return new InscriptionReponse(utilisateurSauvegarder.getPrenom());
     }
 
 }
