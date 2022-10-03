@@ -25,11 +25,11 @@ public class Commande {
     @Column(name = "numero_suivi_commande")
     private String numeroSuiviCommande;
 
-    @Column(name = "total_quantite")
-    private int totalQuantite;
-
     @Column(name = "total_prix")
     private int totalPrix;
+
+    @Column(name = "total_quantite")
+    private int totalQuantite;
 
     @Column(name = "statuts")
     private String statuts;
