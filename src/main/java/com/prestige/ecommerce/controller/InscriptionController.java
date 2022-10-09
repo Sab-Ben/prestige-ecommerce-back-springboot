@@ -6,6 +6,8 @@ import com.prestige.ecommerce.dto.InscriptionReponse;
 import com.prestige.ecommerce.service.InscriptionService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/inscription")
@@ -18,7 +20,7 @@ public class InscriptionController {
     }
 
     @PostMapping("/save")
-    public InscriptionReponse confirmationInscription (@RequestBody Inscription inscription) {
+    public InscriptionReponse confirmationInscription (@Valid @RequestBody Inscription inscription) {
         InscriptionReponse inscriptionReponse = inscriptionService.confirmationInscription(inscription);
 
         return inscriptionReponse;

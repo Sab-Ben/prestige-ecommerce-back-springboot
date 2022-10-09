@@ -28,7 +28,7 @@ public class InscriptionServiceImpl implements InscriptionService{
             assert utilisateur != null;
         Utilisateur utilisateurSauvegarder = utilisateurRepository.save(utilisateur);
 
-        return new InscriptionReponse(utilisateurSauvegarder.getPrenom());
+        return new InscriptionReponse(utilisateurSauvegarder);
     }
 
 }

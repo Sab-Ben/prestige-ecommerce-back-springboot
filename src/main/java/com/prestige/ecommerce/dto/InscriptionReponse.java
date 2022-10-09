@@ -1,9 +1,10 @@
 package com.prestige.ecommerce.dto;
 
+import com.prestige.ecommerce.entity.Utilisateur;
 import lombok.Data;
 
 @Data
 public class InscriptionReponse {
 
-    private final String confirmationInscription;
+    private final Utilisateur confirmationInscription;
 }

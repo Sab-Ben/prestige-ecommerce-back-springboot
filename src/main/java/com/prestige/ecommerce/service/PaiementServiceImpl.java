@@ -42,8 +42,8 @@ public class PaiementServiceImpl implements PaiementService {
         utilisateur.add(commande);
         utilisateur.addAdresse(adresse);
 
-
-        utilisateurRepository.save(utilisateur);
+        String email = utilisateur.getEmail();
+        utilisateurRepository.findByEmail(email);
 
         return new AchatReponse(numeroSuiviCommande);
     }
