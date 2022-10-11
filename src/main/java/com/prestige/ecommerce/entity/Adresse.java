@@ -32,9 +32,6 @@ public class Adresse {
     @Column(name = "ville")
     private String ville;
 
-    @Column(name = "telephone_adresse")
-    private int telephone_adresse;
-
     @ManyToOne
     @JoinColumn(name = "utilisateur_id", nullable = false)
     private Utilisateur utilisateur;

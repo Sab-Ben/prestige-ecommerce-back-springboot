@@ -16,6 +16,7 @@ public class InscriptionServiceImpl implements InscriptionService{
 
     private final UtilisateurRepository utilisateurRepository;
 
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -32,7 +33,7 @@ public class InscriptionServiceImpl implements InscriptionService{
 
             String email = utilisateur.getEmail();
             Utilisateur utilisateurBDD =utilisateurRepository.findByEmail(email);
-            if (utilisateurBDD == null) {
+            if (utilisateurBDD != null) {
                 utilisateur = utilisateurBDD;
             }
 
