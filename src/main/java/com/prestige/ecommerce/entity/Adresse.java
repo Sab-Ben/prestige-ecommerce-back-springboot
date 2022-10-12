@@ -27,7 +27,7 @@ public class Adresse {
     private String complement_adresse;
 
     @Column(name = "code_postale")
-    private int code_postale;
+    private String code_postale;
 
     @Column(name = "ville")
     private String ville;
