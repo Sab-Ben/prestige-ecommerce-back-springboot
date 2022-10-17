@@ -18,16 +18,16 @@ public class Adresse {
     private Long id;
 
     @Column(name = "nom_adresse")
-    private String nom_adresse;
+    private String nomAdresse;
 
     @Column(name = "adresse")
     private String adresse;
 
     @Column(name = "complement_adresse")
-    private String complement_adresse;
+    private String complementAdresse;
 
     @Column(name = "code_postale")
-    private String code_postale;
+    private int codePostale;
 
     @Column(name = "ville")
     private String ville;
