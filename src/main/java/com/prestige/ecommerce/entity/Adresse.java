@@ -23,9 +23,6 @@ public class Adresse {
     @Column(name = "adresse")
     private String adresse;
 
-    @Column(name = "complement_adresse")
-    private String complementAdresse;
-
     @Column(name = "code_postale")
     private int codePostale;
 

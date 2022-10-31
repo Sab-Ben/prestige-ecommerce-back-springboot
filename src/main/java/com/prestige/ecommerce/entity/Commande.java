@@ -31,9 +31,6 @@ public class Commande {
     @Column(name = "total_quantite")
     private int totalQuantite;
 
-    @Column(name = "statuts")
-    private String statuts;
-
     @Column(name = "date")
     @CreationTimestamp
     private Date date;
