@@ -19,8 +19,8 @@ class PrestigeEcommerceApplicationTests {
 	@Test
 	void testNoFindByEmail() {
 		String email = "sabrina@gmail.com";
-		Utilisateur user = utilisateurRepository.findByEmail("goerges.abidbol@yopmail.fr");
-		String emailFind = user.getEmail();
+		Utilisateur utilisateur = utilisateurRepository.findByEmail("goerges.abidbol@yopmail.fr");
+		String emailFind = utilisateur.getEmail();
 		assertNotEquals(email,emailFind);}
 }
 

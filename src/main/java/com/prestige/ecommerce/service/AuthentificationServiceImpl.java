@@ -22,18 +22,18 @@ public class AuthentificationServiceImpl implements AuthentificationService{
         Utilisateur utilisateur = authentification.getUtilisateur();
 
         String email = utilisateur.getEmail();
-        String connexionSuccessMessage = userExisting(email);
+        Utilisateur userSuccess = userExisting(email);
 
-        return new AuthentificationReponse(connexionSuccessMessage);
+        return new AuthentificationReponse(userSuccess.getEmail(), userSuccess);
     }
 
-    private String userExisting(String email) {
+    private Utilisateur userExisting(String email) {
 
         Utilisateur utilisateur = utilisateurRepository.findByEmail(email);
         if (utilisateur == null) {
             throw new UtilisateurNotFoundException("L'utilisateur n'existe pas pour ce mail " + email);
         }
-        return utilisateur.getEmail();
+        return utilisateur;
     }
 
 }

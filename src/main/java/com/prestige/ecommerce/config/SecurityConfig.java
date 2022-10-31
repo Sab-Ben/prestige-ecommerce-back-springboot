@@ -19,17 +19,14 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.csrf().disable().cors().disable()
                 .authorizeHttpRequests()
-                .antMatchers("/api/inscription/save").permitAll()
-                .antMatchers("/accueil").permitAll()
-//                .antMatchers("/users").hasRole("ADMIN")
                 .and()
                 .formLogin(
                         form -> form
                                 .loginPage("/connexion")
-                                .loginProcessingUrl("/connexion/success")
-                                .defaultSuccessUrl("/compte")
+                                .loginProcessingUrl("/connexion")
+                                .defaultSuccessUrl("/accueil")
                                 .permitAll()
                 ).logout(
                         logout -> logout
@@ -38,6 +35,5 @@ public class SecurityConfig {
                 );
 
         return http.build();
-
     }
 }

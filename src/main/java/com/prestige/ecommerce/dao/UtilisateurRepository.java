@@ -8,5 +8,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
 
     Utilisateur findByEmail(String email);
-    Utilisateur findById(String id);
 }
