@@ -6,12 +6,10 @@ import com.prestige.ecommerce.service.AuthentificationService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
-@CrossOrigin("https://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/connexion")
 public class AuthentificationController {
-
 
     private AuthentificationService authentificationService;
 

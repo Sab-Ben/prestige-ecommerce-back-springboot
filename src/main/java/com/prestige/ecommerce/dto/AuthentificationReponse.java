@@ -1,10 +1,7 @@
 package com.prestige.ecommerce.dto;
 
-import com.prestige.ecommerce.entity.Utilisateur;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-
 import java.util.Set;
 
 @AllArgsConstructor

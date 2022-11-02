@@ -39,13 +39,25 @@ public class PaiementServiceImpl implements PaiementService {
         Adresse adresse = achat.getAdresse();
 
         Utilisateur utilisateur = achat.getUtilisateur();
-        utilisateur.add(commande);
-        utilisateur.addAdresse(adresse);
+        String email = utilisateur.getEmail();
+        Utilisateur utilisateurExiste = userExisting(email);
 
-        utilisateurRepository.save(utilisateur);
+        utilisateurExiste.add(commande);
+        utilisateurExiste.addAdresse(adresse);
+
+        utilisateurRepository.flush();
 
         return new AchatReponse(numeroSuiviCommande);
     }
 
     private String generateNumeroSuiviCommande() {return UUID.randomUUID().toString();}
+
+    private Utilisateur userExisting(String email) {
+
+        Utilisateur utilisateur = utilisateurRepository.findByEmail(email);
+        if (utilisateur == null) {
+            throw new UtilisateurNotFoundException("L'utilisateur n'existe pas pour ce mail " + email);
+        }
+        return utilisateur;
+    }
 }

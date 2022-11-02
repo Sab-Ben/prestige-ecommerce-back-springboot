@@ -47,7 +47,6 @@ public class AuthentificationServiceImpl implements AuthentificationService{
                         commande.getDate()))
                 .collect(Collectors.toSet());
 
-
         return new AuthentificationReponse(utilisateurExiste.getEmail(), utilisateurReponse, commandeReponses, adresseReponses);
     }
 

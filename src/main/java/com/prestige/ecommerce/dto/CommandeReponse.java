@@ -17,5 +17,4 @@ public class CommandeReponse {
 
     @CreationTimestamp
     private Date date;
-
 }

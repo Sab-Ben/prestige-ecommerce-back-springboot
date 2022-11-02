@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@CrossOrigin("https://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/inscription")
 public class InscriptionController {
