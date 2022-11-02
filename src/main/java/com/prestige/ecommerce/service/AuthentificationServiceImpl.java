@@ -7,8 +7,6 @@ import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -29,17 +27,18 @@ public class AuthentificationServiceImpl implements AuthentificationService{
 
         String email = utilisateur.getEmail();
         Utilisateur utilisateurExiste = userExisting(email);
+
         var utilisateurReponse = new UtilisateurReponse(utilisateurExiste.getNom(),
                 utilisateurExiste.getPrenom(),
                 utilisateurExiste.getEmail(),
                 utilisateurExiste.getTelephone());
+
         Set<AdresseReponse> adresseReponses = utilisateurExiste.getAdresses().stream()
                 .map(adresse -> new AdresseReponse(adresse.getNomAdresse(),
                         adresse.getAdresse(),
                         adresse.getCodePostale(),
                         adresse.getVille()))
                 .collect(Collectors.toSet());
-
 
         Set<CommandeReponse> commandeReponses = utilisateurExiste.getCommandes().stream()
                 .map(commande -> new CommandeReponse(commande.getNumeroSuiviCommande(),
@@ -58,9 +57,6 @@ public class AuthentificationServiceImpl implements AuthentificationService{
         if (utilisateur == null) {
             throw new UtilisateurNotFoundException("L'utilisateur n'existe pas pour ce mail " + email);
         }
-
-
         return utilisateur;
     }
-
 }
