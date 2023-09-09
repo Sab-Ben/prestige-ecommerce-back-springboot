@@ -1,9 +1,22 @@
 package com.prestige.ecommerce.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import javax.validation.constraints.Email;
 
-@Data
+
+@AllArgsConstructor
+@Getter
 public class CompteReponse {
 
-    private final String accesCompte;
+    private String nom;
+
+    private String prenom;
+
+    @Email
+    private String email;
+
+    private int telephone;
+
+
 }

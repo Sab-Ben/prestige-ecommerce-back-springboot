@@ -9,7 +9,7 @@ import java.util.Set;
 public class AuthentificationReponse {
 
     private final String connexionSuccessMessage;
-    private final UtilisateurReponse utilisateur;
+    private final CompteReponse utilisateur;
     private final Set<CommandeReponse> commandes;
     private final Set<AdresseReponse> adresses;
 

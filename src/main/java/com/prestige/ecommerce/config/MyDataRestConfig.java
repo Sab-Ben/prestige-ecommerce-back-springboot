@@ -19,7 +19,7 @@ import java.util.Set;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    @Value("https://localhost:4200")
+    @Value("http://localhost:4200")
     private String[] theAllowedOrigins;
     private EntityManager entityManager;
 

@@ -28,7 +28,7 @@ public class AuthentificationServiceImpl implements AuthentificationService{
         String email = utilisateur.getEmail();
         Utilisateur utilisateurExiste = userExisting(email);
 
-        var utilisateurReponse = new UtilisateurReponse(utilisateurExiste.getNom(),
+        var compteReponse = new CompteReponse(utilisateurExiste.getNom(),
                 utilisateurExiste.getPrenom(),
                 utilisateurExiste.getEmail(),
                 utilisateurExiste.getTelephone());
@@ -47,8 +47,9 @@ public class AuthentificationServiceImpl implements AuthentificationService{
                         commande.getDate()))
                 .collect(Collectors.toSet());
 
-        return new AuthentificationReponse(utilisateurExiste.getEmail(), utilisateurReponse, commandeReponses, adresseReponses);
+        return new AuthentificationReponse(utilisateurExiste.getEmail(), compteReponse, commandeReponses, adresseReponses);
     }
+
 
     private Utilisateur userExisting(String email) {
 
